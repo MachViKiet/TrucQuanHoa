@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Câu 3</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 50px;
+      }
+      .chart-container {
+        width: 800px;
+        height: 400px;
+        margin: 0 auto;
+      }
+      .line {
+        fill: none;
+        stroke-width: 2px;
+      }
+      .axis path,
+      .axis line {
+        fill: none;
+        stroke: black;
+        shape-rendering: crispEdges;
+      }
+      .axis text {
+        font-size: 14px;
+      }
+      .container {
+        display: flex;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 4px 8px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd38;
+      }
+      tr:nth-child(13) {
+        background-color: #ffa50052;
+      }
+      tr:nth-child(2) {
+        background-color: #0000ff3b;
+      }
+      tr:nth-child(15) {
+        background-color: #0080005e;
+      }
+
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>3. Báo cáo số vụ tai nạn qua các năm</h1>
+    <div class="container" style="padding: 50px 20px">
+      <div class="lineChart_1"></div>
+      <div class="Data">
+        <h4>Nhận xét</h4>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nam, doloribus commodi nesciunt repellendus veniam distinctio maxime tempora necessitatibus, sequi dolorem beatae animi. Iusto excepturi ratione ut! Natus, soluta! Ex.
+          Repellat neque possimus vero consequatur earum perferendis dolorum rem explicabo, eveniet officiis, reiciendis, sint quod id maxime quo cumque quam voluptates. Corrupti, itaque veritatis dolore sed perspiciatis odit repellat sit!
+          Quasi non sit maiores corporis deserunt corrupti laboriosam, rem hic, laborum commodi voluptas eos ex vel optio illo laudantium recusandae architecto ipsam? Quis deleniti maxime ducimus at odio, modi ea!
+        </p>
+      </div>
+    </div>
+    <h3>Thông kê các vụ tai nạn theo từng thành phố</h3>
+    <div id="table" style="border-radius: 10px; padding: 5px"></div>
+    <div class="container" style="padding: 50px 20px">
+      <div class="lineChart_2"></div>
+      <div class="Data">
+        <h4>Nhận xét</h4>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nam, doloribus commodi nesciunt repellendus veniam distinctio maxime tempora necessitatibus, sequi dolorem beatae animi. Iusto excepturi ratione ut! Natus, soluta! Ex.
+          Repellat neque possimus vero consequatur earum perferendis dolorum rem explicabo, eveniet officiis, reiciendis, sint quod id maxime quo cumque quam voluptates. Corrupti, itaque veritatis dolore sed perspiciatis odit repellat sit!
+          Quasi non sit maiores corporis deserunt corrupti laboriosam, rem hic, laborum commodi voluptas eos ex vel optio illo laudantium recusandae architecto ipsam? Quis deleniti maxime ducimus at odio, modi ea!
+        </p>
+      </div>
+      </div>
+    </div>
+
+    <script src="./script/linechart.js"></script>
+    <script src="./script/table.js"></script>
+    <script>
+      var data = [
+        ["", 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, "Total"],
+        ["ANTIOCH", 2840, 3281, 3160, 3077, 3505, 2267, 2265, 864, 21259],
+        ["ASHLAND CITY", 2, 9, 8, 3, 7, 6, 6, 0, 41],
+        ["BELLEVUE", 0, 0, 0, 0, 0, 0, 1, 0, 1],
+        ["BRENTWOOD", 602, 681, 627, 580, 498, 258, 266, 121, 3633],
+        ["FAIRVIEW", 0, 0, 0, 0, 0, 1, 0, 0, 1],
+        ["GOODLETTSVILLE", 202, 186, 182, 197, 170, 119, 111, 47, 1214],
+        ["HENDERSONVILLE", 0, 1, 0, 0, 0, 0, 0, 0, 1],
+        ["HERMITAGE", 1063, 1225, 1170, 1240, 1077, 786, 609, 279, 7449],
+        ["JOELTON", 209, 215, 241, 256, 218, 136, 158, 78, 1511],
+        ["LAKEWOOD", 1, 1, 1, 0, 0, 0, 0, 0, 3],
+        ["LAVERGNE", 2, 1, 0, 0, 0, 0, 0, 0, 3],
+        ["MADISON", 2119, 2279, 2126, 2173, 2172, 1503, 1342, 503, 14217],
+        ["MOUNT JULIET", 4, 3, 2, 5, 4, 3, 6, 2, 29],
+        [
+          "NASHVILLE",
+          24653,
+          25873,
+          26012,
+          26267,
+          26223,
+          15414,
+          13564,
+          5681,
+          163687,
+        ],
+        ["NOLENSVILLE", 16, 29, 32, 25, 32, 17, 16, 12, 179],
+        ["OLD HICKORY", 291, 336, 337, 290, 280, 237, 181, 77, 2029],
+        ["PEGRAM", 1, 0, 0, 0, 0, 0, 0, 0, 1],
+        ["SPRING HILL", 1, 0, 0, 0, 0, 0, 0, 0, 1],
+        ["WHITES CREEK", 283, 312, 377, 357, 408, 278, 251, 102, 2368],
+      ];
+      createTable("#table", data);
+
+      var dataLineChar = [
+        { year: 2015, ANTIOCH: 2840, MADISON: 2119, NASHVILLE: 24653 },
+        { year: 2016, ANTIOCH: 3281, MADISON: 2279, NASHVILLE: 25873 },
+        { year: 2017, ANTIOCH: 3160, MADISON: 2126, NASHVILLE: 26012 },
+        { year: 2018, ANTIOCH: 3077, MADISON: 2173, NASHVILLE: 26267 },
+        { year: 2019, ANTIOCH: 3505, MADISON: 2172, NASHVILLE: 26223 },
+        { year: 2020, ANTIOCH: 2267, MADISON: 1503, NASHVILLE: 15414 },
+        { year: 2021, ANTIOCH: 2265, MADISON: 1342, NASHVILLE: 13564 },
+        { year: 2022, ANTIOCH: 864, MADISON: 503, NASHVILLE: 5681 },
+      ];
+      createLineChart(
+        ".lineChart_2",
+        dataLineChar,
+        "Accidents Over the Years",
+        "Years",
+        "Number of Accidents"
+      );
+
+      var dataLineChar = [
+        { year: 2015, Total: 32289 },
+        { year: 2016, Total: 34432 },
+        { year: 2017, Total: 34275 },
+        { year: 2018, Total: 34470 },
+        { year: 2019, Total: 34594 },
+        { year: 2020, Total: 21025 },
+        { year: 2021, Total: 18776 },
+        { year: 2022, Total: 7766 },
+      ];
+      createLineChart(
+        ".lineChart_1",
+        dataLineChar,
+        "Tổng số vụ tai nạn được ghi nhận qua các năm",
+        "Năm",
+        "Số vụ tai nạn"
+      );
+    </script>
+  </body>
+</html>
