@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Câu 3</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <link rel="stylesheet" href="./style/Question3&4.css">
+  </head>
+  <body>
+    <h1>3. Báo cáo số vụ tai nạn qua các năm</h1>
+    <h3>Thống kê tổng số vụ tai nạn xảy ra hàng năm</h3>
+    <div class="container">
+      <div class="lineChart_1"></div>
+      <div class="Data">
+        <h4>Nhận xét</h4>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nam, doloribus commodi nesciunt repellendus veniam distinctio maxime tempora necessitatibus, sequi dolorem beatae animi. Iusto excepturi ratione ut! Natus, soluta! Ex.
+          Repellat neque possimus vero consequatur earum perferendis dolorum rem explicabo, eveniet officiis, reiciendis, sint quod id maxime quo cumque quam voluptates. Corrupti, itaque veritatis dolore sed perspiciatis odit repellat sit!
+          Quasi non sit maiores corporis deserunt corrupti laboriosam, rem hic, laborum commodi voluptas eos ex vel optio illo laudantium recusandae architecto ipsam? Quis deleniti maxime ducimus at odio, modi ea!
+        </p>
+      </div>
+    </div>
+    <h3>Thống kê các vụ tai nạn theo từng thành phố</h3>
+    <div class="container">
+      <div class="chart-container">
+        <div class="lineChart_2"></div>
+        <div class="container" style = "justify-content: space-around;">
+          <div class="container">
+            <div class="box_color" style="width: 20px; height: 20px; background: #1f77b4"></div>
+            <div class="box_inf" style= "margin-left: 10px">Nashville</div>
+          </div>
+          <div class="container">
+            <div class="box_color" style="width: 20px; height: 20px; background: #ff7f0e"></div>
+            <div class="box_inf" style= "margin-left: 10px">Nashville</div>
+          </div>
+          <div class="container">
+            <div class="box_color" style="width: 20px; height: 20px; background: #2ca02c"></div>
+            <div class="box_inf" style= "margin-left: 10px">Nashville</div>
+          </div>
+        </div>
+      </div>
+      <div class="Data">
+        <h4>Nhận xét</h4>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nam, doloribus commodi nesciunt repellendus veniam distinctio maxime tempora necessitatibus, sequi dolorem beatae animi. Iusto excepturi ratione ut! Natus, soluta! Ex.
+          Repellat neque possimus vero consequatur earum perferendis dolorum rem explicabo, eveniet officiis, reiciendis, sint quod id maxime quo cumque quam voluptates. Corrupti, itaque veritatis dolore sed perspiciatis odit repellat sit!
+          Quasi non sit maiores corporis deserunt corrupti laboriosam, rem hic, laborum commodi voluptas eos ex vel optio illo laudantium recusandae architecto ipsam? Quis deleniti maxime ducimus at odio, modi ea!
+        </p>
+      </div>
+      </div>
+    </div>
+
+
+    <h1>4. Sự ảnh hưởng của thời tiết tác động xảy ra tai nạn ?</h1>
+    <h3>Thống kê các vụ tai nạn xảy ra trong các thời tiết khác nhau</h3>
+    <div class="container">
+      <div>
+        <div class="k-pie-chart"></div>
+        <div class="container" style = "justify-content: space-around;">
+          <div class="container">
+            <div class="box_color" style="width: 20px; height: 20px; background: #ff7f0e"></div>
+            <div class="box_inf" style= "margin-left: 10px">Clean</div>
+          </div>
+          <div class="container">
+            <div class="box_color" style="width: 20px; height: 20px; background: #1f77b4"></div>
+            <div class="box_inf" style= "margin-left: 10px">Rain</div>
+          </div>
+          <div class="container">
+            <div class="box_color" style="width: 20px; height: 20px; background: #2ca02c"></div>
+            <div class="box_inf" style= "margin-left: 10px">Cloudy</div>
+          </div>
+          <div class="container">
+            <div class="box_color" style="width: 20px; height: 20px; background:#d62728"></div>
+            <div class="box_inf" style= "margin-left: 10px">Other</div>
+          </div>
+        </div>
+      </div>
+      <div class="Data" style="padding: 0 20px">
+        <h4>Nhận xét</h4>
+        <p style="max-width: 500px">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam nam,
+          doloribus commodi nesciunt repellendus veniam distinctio maxime
+          tempora necessitatibus, sequi dolorem beatae animi. Iusto excepturi
+          ratione ut! Natus, soluta! Ex. Repellat neque possimus vero
+          consequatur earum perferendis dolorum rem explicabo, eveniet officiis,
+          reiciendis, sint quod id maxime quo cumque quam voluptates. Corrupti,
+          itaque veritatis dolore sed perspiciatis odit repellat sit! Quasi non
+          sit maiores corporis deserunt corrupti laboriosam, rem hic, laborum
+          commodi voluptas eos ex vel optio illo laudantium recusandae
+          architecto ipsam? Quis deleniti maxime ducimus at odio, modi ea!
+        </p>
+      </div>
+      <div></div>
+    </div>
+    <script src="./script/linechart.js"></script>
+    <script>
+
+      var dataLineChar = [
+        { year: 2015, ANTIOCH: 2840, MADISON: 2119, NASHVILLE: 24653 },
+        { year: 2016, ANTIOCH: 3281, MADISON: 2279, NASHVILLE: 25873 },
+        { year: 2017, ANTIOCH: 3160, MADISON: 2126, NASHVILLE: 26012 },
+        { year: 2018, ANTIOCH: 3077, MADISON: 2173, NASHVILLE: 26267 },
+        { year: 2019, ANTIOCH: 3505, MADISON: 2172, NASHVILLE: 26223 },
+        { year: 2020, ANTIOCH: 2267, MADISON: 1503, NASHVILLE: 15414 },
+        { year: 2021, ANTIOCH: 2265, MADISON: 1342, NASHVILLE: 13564 },
+        { year: 2022, ANTIOCH: 864, MADISON: 503, NASHVILLE: 5681 },
+      ];
+      createLineChart(
+        ".lineChart_2",
+        dataLineChar,
+        "Accidents Over the Years",
+        "Years",
+        "Number of Accidents"
+      );
+
+      var dataLineChar = [
+        { year: 2015, Total: 32289 },
+        { year: 2016, Total: 34432 },
+        { year: 2017, Total: 34275 },
+        { year: 2018, Total: 34470 },
+        { year: 2019, Total: 34594 },
+        { year: 2020, Total: 21025 },
+        { year: 2021, Total: 18776 },
+        { year: 2022, Total: 7766 },
+      ];
+      createLineChart(
+        ".lineChart_1",
+        dataLineChar,
+        "Tổng số vụ tai nạn được ghi nhận qua các năm",
+        "Năm",
+        "Số vụ tai nạn"
+      );
+    </script>
+
+
+    <script src="./script/piechart.js"></script>
+    <script>
+      var piechartdata = {
+        CLEAR: 147564,
+        RAIN: 28391,
+        CLOUDY: 31450,
+        OTHER: 10222,
+      };
+      createPieChart(".k-pie-chart", piechartdata);
+    </script>
+  </body>
+</html>

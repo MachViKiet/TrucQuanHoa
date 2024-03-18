@@ -63,7 +63,7 @@ const createPieChart = (id, data) => {
   var color = d3.scaleOrdinal().domain(data).range(colors);
 
   var svg = d3
-    .select(".chart-container")
+    .select(id)
     .append("svg")
     .attr("width", width)
     .attr("height", height)
