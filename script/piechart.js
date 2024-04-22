@@ -1,22 +1,21 @@
-  // Dữ liệu
-  var data = {
-    CLEAR: 147564,
-    RAIN: 28391,
-    CLOUDY: 31450,
-    "#empty": 5350,
-    "SLEET HAIL": 396,
-    SNOW: 1748,
-    FOG: 450,
-    "SMOG SMOKE": 25,
-    "SEVERE CROSSWIND": 28,
-    "BLOWING SNOW": 82,
-    "BLOWING SAND/SOIL/DIRT": 1,
-    "OTHER (NARRATIVE)": 119,
-    UNKNOWN: 2023,
-  };
+// Dữ liệu
+var data = {
+  CLEAR: 147564,
+  RAIN: 28391,
+  CLOUDY: 31450,
+  "#empty": 5350,
+  "SLEET HAIL": 396,
+  SNOW: 1748,
+  FOG: 450,
+  "SMOG SMOKE": 25,
+  "SEVERE CROSSWIND": 28,
+  "BLOWING SNOW": 82,
+  "BLOWING SAND/SOIL/DIRT": 1,
+  "OTHER (NARRATIVE)": 119,
+  UNKNOWN: 2023,
+};
 
 const createPieChart = (id, data) => {
-
   // Tính tổng của tất cả các giá trị
   var total = Object.values(data).reduce((acc, curr) => acc + curr, 0);
 
@@ -92,28 +91,26 @@ const createPieChart = (id, data) => {
   g.append("path")
     .attr("d", arc)
     .style("fill", function (d) {
+      console.log("data: ", d.data);
       return color(d.data.key);
-    })
-    .on("mouseover", function (d) {
-      console.log(d);
-      var selectedData = formattedData.find(
-        (item) => item.label === d.data.key
-      );
-      tooltip.transition().duration(200).style("opacity", 0.9);
-      tooltip
-        .html(
-          selectedData.label +
-            ": " +
-            selectedData.value +
-            " - " +
-            selectedData.percentage
-        )
-        .style("left", d3.event.pageX + "px")
-        .style("top", d3.event.pageY - 28 + "px");
-    })
-    .on("mouseout", function (d) {
-      tooltip.transition().duration(500).style("opacity", 0);
     });
+  g.on("mouseover", function (d) {
+    var selectedData = formattedData.find((item) => item.label === d.data.key);
+    tooltip.transition().duration(200).style("opacity", 0.9);
+    console.log(d3.event)
+    tooltip
+      .html(
+        selectedData.label +
+          ": " +
+          selectedData.value +
+          " - " +
+          selectedData.percentage
+      )
+      .style("left", d3.event.pageX + "px")
+      .style("top", d3.event.pageY - 28 + "px");
+  }).on("mouseout", function (d) {
+    tooltip.transition().duration(500).style("opacity", 0);
+  });
 
   var tooltip = d3
     .select("body")

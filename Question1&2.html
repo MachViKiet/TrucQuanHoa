@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thực hành trực quan hoá dữ liệu</title>
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="./style/Question1&2.css" />
+    <style>
+      .tooltip {
+        position: absolute;
+        text-align: center;
+        width: auto;
+        height: auto;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-radius: 5px;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <>
+    <div class="header">
+      1. Tỉ lệ các loại tai nạn (collision type description)?
+    </div>
+    <select id="standard-select" class="classic">
+      <option value="All" selected>All</option>
+      <option value="West Precinct">West Precinct</option>
+      <option value="South Precinct">South Precinct</option>
+      <option value="North Precinct">North Precinct</option>
+      <option value="Midtown Hills Precinct">Midtown Hills Precinct</option>
+      <option value="Madison Precinct">Madison Precinct</option>
+      <option value="Hermitage Precinct">Hermitage Precinct</option>
+      <option value="East Precinct">East Precinct</option>
+      <option value="Central Precinct">Central Precinct</option>
+    </select>
+    <div id="my_dataviz" class="my_block">
+      <svg width="900" height="400" fill="%23000000"></svg>
+    </div>
+
+    <div class="my_block">
+      Nhận xét :
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nihil esse
+        tenetur praesentium deserunt delectus nemo, eum voluptatibus
+        consectetur. Accusamus nobis repellat quasi eos quos distinctio eius eum
+        temporibus et magnam? Minus illo neque molestiae sunt eius perferendis,
+        voluptas reprehenderit quam nobis quas! Officia adipisci, magni
+        recusandae aliquid aspernatur eius temporibus minima quo nobis,
+        veritatis natus ullam autem non id aut.
+      </p>
+    </div>
+
+    <div class="header">
+      1. Tỉ lệ các loại tai nạn (collision type description)?
+    </div>
+    <div class="my_block">
+        <div id="chart-container"></div>
+    </div>
+    <!-- Tỉ lệ các loại tai nạn (collision type description)? -->
+    <script type="module" src="./script/piechart2.js">
+      updatePieC1("All")
+    </script>
+    <script type="module" src="./script/getData.js"></script>
+    <script>
+     
+    </script>
+  </body>
+</html>
