@@ -40,7 +40,7 @@ d3.csv("/data/Traffic_Accidents.csv")
             .domain(chartData.map(d => d.Type));
 
         const chartContainer = d3
-            .select("div[id = 'q5']")
+            .select("#q5")
             .select('svg')
             .attr('width', width + margin.left + margin.right)
             .attr('height', height + margin.top + margin.bottom)
