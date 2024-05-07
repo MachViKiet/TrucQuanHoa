@@ -1,5 +1,5 @@
 /*
-    Q5: Báo cáo về mỗi quan hệ giữa số vụ "Hit and Run" và các loại va chạm 
+    Q5: So sánh số vụ Hit and Run giữa các loại va chạm 
 */
 
 d3.csv("/data/Traffic_Accidents.csv")
