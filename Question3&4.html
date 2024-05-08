@@ -7,6 +7,35 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/d3.v4.js"></script>
     <link rel="stylesheet" href="./style/Question3&4.css">
+
+    <style>
+      *{
+        padding: 0;
+        margin: 0
+      }
+      body{
+        background-color: #8d950d;
+        margin : 0;
+      }
+
+      .container-1 {
+        background-color: #fff;
+        padding: 40px 20px;
+        margin: 20px 20px;
+        border-radius: 20px;
+      }
+
+      h1{
+        padding: 20px 40px;
+        color: #fff;
+      }
+
+      h3{
+        padding: 0 40px;
+        color: #fff;
+      }
+    </style>
+
   </head>
   <body>
     <h1>3. Báo cáo số vụ tai nạn qua các năm</h1>
@@ -23,21 +52,21 @@
       </div>
     </div> -->
     <h3>Thống kê các vụ tai nạn theo từng thành phố</h3>
-    <div class="container">
+    <div class="container-1 container">
       <div class="chart-container">
         <div class="lineChart_2"></div>
         <div class="container" style = "justify-content: space-around;">
           <div class="container">
             <div class="box_color" style="width: 20px; height: 20px; background: #1f77b4"></div>
-            <div class="box_inf" style= "margin-left: 10px">Nashville</div>
+            <div class="box_inf" style= "margin-left: 10px">ANTIOCH</div>
           </div>
           <div class="container">
             <div class="box_color" style="width: 20px; height: 20px; background: #ff7f0e"></div>
-            <div class="box_inf" style= "margin-left: 10px">Nashville</div>
+            <div class="box_inf" style= "margin-left: 10px">MADISON</div>
           </div>
           <div class="container">
             <div class="box_color" style="width: 20px; height: 20px; background: #2ca02c"></div>
-            <div class="box_inf" style= "margin-left: 10px">Nashville</div>
+            <div class="box_inf" style= "margin-left: 10px">NASHVILLE</div>
           </div>
         </div>
       </div>
@@ -55,7 +84,7 @@
 
     <h1>4. Sự ảnh hưởng của thời tiết tác động xảy ra tai nạn ?</h1>
     <h3>Thống kê các vụ tai nạn xảy ra trong các thời tiết khác nhau</h3>
-    <div class="container">
+    <div class="container-1 container">
       <div>
         <div class="k-pie-chart"></div>
         <div class="container" style = "justify-content: space-around;">
@@ -93,6 +122,9 @@
         </p>
       </div>
       <div></div>
+    </div>
+    <div style="padding: 20px 0; display : flex; justify-content: center;">
+      <a style="color: #fff; text-decoration: none " href="./index.html">Trở về</a>
     </div>
     <script src="./script/linechart.js"></script>
     <script>

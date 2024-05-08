@@ -45,7 +45,7 @@ const createLineChart = (id, data, title, x_name, y_name ) => {
   ];
 
   var margin = { top: 50, right: 50, bottom: 50, left: 70 },
-    width = 800 - margin.left - margin.right,
+    width = 650 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 
   var svg = d3
